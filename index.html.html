@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vive Saludable | Estilos de vida saludable</title>
+<style>
+:root{
+  --bg:#f4f8f6; --card:#ffffff; --text:#20302a; --muted:#5f6f68;
+  --primary:#197a5a; --secondary:#2c9b78; --accent:#f2b84b;
+  --dark:#12352a; --line:#dce8e2; --shadow:0 10px 30px rgba(18,53,42,.10);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+header{
+  background:linear-gradient(135deg,#12352a,#197a5a 60%,#2c9b78);
+  color:white;padding:54px 20px;text-align:center;
+}
+header h1{font-size:clamp(2rem,5vw,4rem);margin:0 0 8px}
+header p{max-width:850px;margin:auto;font-size:1.08rem;opacity:.95}
+nav{
+  position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);
+  display:flex;gap:8px;overflow:auto;padding:10px 14px
+}
+nav a{white-space:nowrap;text-decoration:none;color:var(--dark);padding:9px 13px;border-radius:999px;font-weight:700}
+nav a:hover{background:#e8f4ef}
+main{max-width:1150px;margin:auto;padding:25px 16px 70px}
+section{margin:35px 0}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;
+  box-shadow:var(--shadow);margin:18px 0
+}
+h2{color:var(--dark);font-size:2rem;margin-top:0}
+h3{color:var(--primary);margin-bottom:8px}
+h4{color:var(--dark);margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.small-card{background:#f8fbfa;border:1px solid var(--line);border-radius:16px;padding:18px}
+.badge{display:inline-block;background:#e7f4ee;color:#176347;padding:5px 10px;border-radius:999px;font-size:.86rem;font-weight:700}
+ul{padding-left:22px}
+li{margin:7px 0}
+.highlight{border-left:5px solid var(--accent);padding:14px 18px;background:#fff9ec;border-radius:10px}
+.pyramid{max-width:650px;margin:20px auto;text-align:center}
+.level{margin:7px auto;padding:15px;border-radius:10px;color:#fff;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 5px 12px rgba(0,0,0,.08)}
+.level:hover{transform:scale(1.015)}
+.l1{width:98%;background:#6c8f82}.l2{width:86%;background:#3c9b77}.l3{width:72%;background:#e1a83f}.l4{width:58%;background:#c46b55}
+.info-box{display:none;margin:8px auto 14px;max-width:700px;background:#f7fbf9;border:1px solid var(--line);padding:15px;border-radius:12px;text-align:left}
+.info-box.show{display:block}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:14px 17px}
+summary{cursor:pointer;font-weight:800;color:var(--dark)}
+.sleep-grid .small-card{min-height:170px}
+.icon{font-size:2rem}
+table{width:100%;border-collapse:collapse;margin:15px 0}
+th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+th{background:#e8f4ef;color:var(--dark)}
+.quiz-q{padding:18px;border:1px solid var(--line);border-radius:15px;margin:14px 0;background:#fbfdfc}
+.quiz-q label{display:block;margin:7px 0;padding:8px;border-radius:8px}
+.quiz-q label:hover{background:#edf7f2}
+button{
+  border:0;border-radius:12px;background:var(--primary);color:#fff;padding:12px 18px;
+  font-size:1rem;font-weight:700;cursor:pointer
+}
+button:hover{background:#125d45}
+#resultado{margin-top:18px;font-size:1.15rem;font-weight:700}
+footer{background:var(--dark);color:#dcebe5;text-align:center;padding:30px 16px}
+.note{font-size:.92rem;color:var(--muted)}
+.source{font-size:.88rem;color:#687a72}
+@media(max-width:650px){.card{padding:18px}nav{position:static}}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="badge">Proyecto educativo de salud</span>
+  <h1>Vive Saludable</h1>
+  <p>Estilos de vida saludable · Pirámide alimenticia · Fisiología e higiene del sueño</p>
+  <p style="margin-top:12px">Una experiencia web basada en el documento del proyecto, con información científica, educativa e interactiva.</p>
+</header>
+
+<nav>
+  <a href="#marco">Marco teórico</a>
+  <a href="#piramide">Pirámide</a>
+  <a href="#sueno">Sueño</a>
+  <a href="#proyecto">Proyecto</a>
+  <a href="#oms">OMS</a>
+  <a href="#servicio">Servicio</a>
+  <a href="#minsAL">MINSAL</a>
+  <a href="#fisiologia">Fundamento</a>
+  <a href="#materias">Materias</a>
+  <a href="#ideario">Ideario</a>
+  <a href="#quiz">Preguntas</a>
+</nav>
+
+<main>
+
+<section id="marco">
+<div class="card">
+<h2>1. Marco teórico</h2>
+<h3>Bases teóricas</h3>
+<h4>Marco general: estilo de vida saludable y autocuidado</h4>
+<p>La Organización Mundial de la Salud (OMS) define la salud como un estado completo de bienestar físico, mental y social. La teoría del estilo de vida saludable abarca las conductas adaptativas y decisiones biocomportamentales que un individuo adopta para mantener la homeostasis orgánica. Este equilibrio requiere una interacción armónica entre el gasto energético, la ingesta de nutrientes esenciales y el tiempo de recuperación biológico.</p>
+</div>
+</section>
+
+<section id="piramide">
+<div class="card">
+<h2>2. Pirámide alimenticia</h2>
+<p>La pirámide alimenticia constituye una representación didáctica y científica que jerarquiza las necesidades nutricionales según la biodisponibilidad de los alimentos y el consumo recomendado.</p>
+
+<div class="pyramid">
+  <div class="level l1" onclick="toggleInfo('p1')">💧 Basamento conductual e hidrostático</div>
+  <div id="p1" class="info-box"><b>Incluye:</b> aporte hídrico continuo (aprox. 2.5 litros de agua al día), actividad física regular (mínimo 60 minutos diarios) y adecuada gestión del cortisol mediante el equilibrio emocional.</div>
+
+  <div class="level l2" onclick="toggleInfo('p2')">🌾 Carbohidratos complejos</div>
+  <div id="p2" class="info-box">Cereales integrales y tubérculos que garantizan un suministro glucémico sostenido sin provocar picos de insulinemia.</div>
+
+  <div class="level l3" onclick="toggleInfo('p3')">🥦 Micronutrientes y fibra · Lípidos insaturados</div>
+  <div id="p3" class="info-box">Frutas y verduras frescas aportan vitaminas, minerales y oligoelementos necesarios para catalizar funciones enzimáticas y fortalecer la microbiota. El aceite de oliva virgen extra y los frutos secos son ricos en ácidos grasos omega-3, determinantes para la cardioprotección y la función celular.</div>
+
+  <div class="level l4" onclick="toggleInfo('p4')">🥚 Proteínas · Consumo ocasional</div>
+  <div id="p4" class="info-box">Legumbres, carnes magras, pescados, huevos y lácteos bajos en grasa son indispensables para la síntesis tisular y la respuesta inmunológica. En la cúspide se encuentran alimentos ultraprocesados, embutidos y azúcares añadidos, cuyo consumo desmedido promueve una elevada respuesta lipogénica y sobrecarga metabólica.</div>
+</div>
+
+<div class="grid">
+<div class="small-card"><h3>Carbohidratos complejos</h3><p>Cereales integrales y tubérculos. El documento prioriza avena, trigo y arroz integral, además de legumbres.</p></div>
+<div class="small-card"><h3>Frutas y verduras</h3><p>Aportan vitaminas, minerales, oligoelementos y fibra. Se recomienda un mínimo de 400 g (5 porciones) al día, excluyendo papas, camotes y otros tubérculos feculentos.</p></div>
+<div class="small-card"><h3>Lípidos insaturados</h3><p>Aceite de oliva virgen extra y frutos secos ricos en omega-3, relacionados con cardioprotección y función celular.</p></div>
+<div class="small-card"><h3>Proteínas</h3><p>Legumbres, carnes magras, pescados, huevos y lácteos bajos en grasa.</p></div>
+<div class="small-card"><h3>Ultraprocesados</h3><p>El documento señala limitar alimentos ultraprocesados, embutidos y azúcares añadidos.</p></div>
+<div class="small-card"><h3>Otros límites nutricionales</h3><p>Disminuir azúcares libres, sodio y grasas trans de producción industrial; también se señala la reducción de grasas saturadas.</p></div>
+</div>
+
+<div class="highlight">
+<b>Importancia:</b> comprender la distribución de macronutrientes, la importancia de los alimentos frescos y la limitación de ultraprocesados permite tomar decisiones nutricionales informadas que aseguren un suministro energético constante, prevengan picos de insulina y reduzcan la inflamación sistémica.
+</div>
+</div>
+</section>
+
+<section id="sueno">
+<div class="card">
+<h2>3. Fisiología e higiene del sueño</h2>
+<p>El descanso es un proceso biológico activo regulado por el ritmo circadiano a través del núcleo supraquiasmático del hipotálamo. La higiene del sueño sistematiza las pautas conductuales orientadas a preservar las fases del descanso (NREM y REM).</p>
+
+<div class="grid sleep-grid">
+<div class="small-card"><div class="icon">📵</div><h3>Higiene digital</h3><p>Evitar la exposición a la luz azul de pantallas al menos 60 minutos antes de dormir, previniendo la inhibición de la melatonina en la glándula pineal.</p></div>
+<div class="small-card"><div class="icon">⏰</div><h3>Regularidad circadiana</h3><p>Conservar horarios fijos para acostarse y levantarse para no desincronizar los ritmos biológicos.</p></div>
+<div class="small-card"><div class="icon">☕</div><h3>Restricción de estimulantes</h3><p>Suspender cafeína, bebidas azucaradas o cenas copiosas previas al descanso para evitar interrupciones digestivas y del ciclo REM.</p></div>
+<div class="small-card"><div class="icon">🌙</div><h3>Acondicionamiento ambiental</h3><p>Mantener el dormitorio oscuro, en silencio y a una temperatura confortable.</p></div>
+</div>
+
+<h3>¿Qué ocurre durante el sueño?</h3>
+<ul>
+<li>Durante las fases de sueño profundo ocurre la liberación de la hormona del crecimiento.</li>
+<li>Se produce reparación de microtraumas musculares.</li>
+<li>Se consolida la memoria.</li>
+<li>El sistema glinfático participa en el aclaramiento de desechos metabólicos cerebrales.</li>
+</ul>
+
+<div class="grid">
+<div class="small-card"><h3>Adolescentes</h3><p><b>8 a 10 horas</b> de sueño nocturno continuo.</p></div>
+<div class="small-card"><h3>Adultos</h3><p><b>7 a 9 horas</b> de sueño nocturno continuo.</p></div>
+</div>
+
+<div class="highlight">
+El documento enfatiza eliminar distractores luminosos y reducir la exposición a luz azul durante los 60 minutos previos a dormir para favorecer la secreción fisiológica de melatonina.
+</div>
+
+<h3>Importancia del sueño saludable</h3>
+<p>El descanso se considera un proceso fisiológico activo. La regulación del ritmo circadiano y el cumplimiento de las fases de descanso son indispensables para la recuperación muscular, el equilibrio neuroendocrino (control de ghrelina y leptina) y la consolidación de la memoria.</p>
+</div>
+</section>
+
+<section id="proyecto">
+<div class="card">
+<h2>4. Justificación y propósito del proyecto</h2>
+<p>La importancia de conocer y comprender los estilos de vida saludables radica en que la nutrición balanceada y el descanso reparador representan un pilar fundamental para la salud pública. Identificar el uso adecuado de los nutrientes a través de la pirámide alimenticia, así como las pautas clave para la higiene del sueño, permite comprender cómo la alimentación y el descanso influyen directamente en la prevención de enfermedades y en el rendimiento físico y mental diario.</p>
+<p>A través de un prototipo interactivo se busca representar de manera visual y clara los componentes de la pirámide alimenticia y las mejores técnicas para mantener una buena higiene del sueño, facilitando el aprendizaje. También se incorporan alternativas de hábitos saludables como medidas de prevención, autocuidado y bienestar integral.</p>
+<p>La selección correcta de alimentos, la disciplina en los horarios y el acondicionamiento del entorno para el descanso contribuyen a disminuir riesgos de trastornos metabólicos, fatiga crónica y otras afecciones en la vida cotidiana.</p>
+
+<h3>Objetivos generales</h3>
+<ol>
+<li>Promover la adopción de estilos de vida saludables en la comunidad educativa mediante la difusión e integración de la pirámide alimenticia y las pautas de higiene del sueño, fundamentadas en la evidencia científica de la OMS.</li>
+<li>Analizar la relación de interdependencia fisiológica entre la nutrición equilibrada y el descanso reparador, demostrando cómo su desequilibrio impacta en la salud metabólica, neuroendocrina y cognitiva.</li>
+</ol>
+<h3>Objetivo específico</h3>
+<p>Diseñar e implementar una estrategia informativa y pedagógica basada en recomendaciones oficiales de la OMS sobre ingesta nutricional y regulación del ritmo circadiano, facilitando herramientas prácticas de autocuidado para la prevención de Enfermedades No Transmisibles (ENT).</p>
+
+<h3>¿Cómo funciona nuestra intención?</h3>
+<ul>
+<li><b>Traducción científica:</b> tomar la evidencia clínica de la OMS sobre fisiología digestiva, hormonal y circadiana y simplificarla en conceptos didácticos y comprensibles.</li>
+<li><b>Abordaje integral y simultáneo:</b> enseñar cómo un buen patrón alimentario favorece el ciclo del sueño y cómo un sueño reparador regula las hormonas del apetito, leptina y ghrelina.</li>
+<li><b>Guía de pautas conductuales:</b> aplicar las proporciones de la pirámide alimenticia junto con reglas fijas de higiene digital y circadiana.</li>
+</ul>
+
+<h3>¿Cómo ayudaremos a la comunidad educativa?</h3>
+<ul>
+<li>Informando con evidencia verídica y desmintiendo mitos nutricionales y falsas creencias sobre el descanso con datos oficiales de la OMS.</li>
+<li>Proporcionando herramientas de autocuidado mediante listas de verificación, esquemas visuales de porciones y rutinas de higiene del sueño.</li>
+<li>Fomentando decisiones saludables sostenibles, reduciendo gradualmente la ingesta de ultraprocesados y la exposición a luz azul antes de dormir.</li>
+</ul>
+
+<h3>¿Para qué es este proyecto?</h3>
+<ul>
+<li><b>Prevención de enfermedades:</b> disminuir el riesgo temprano de obesidad, síndrome metabólico, ansiedad y fatiga crónica.</li>
+<li><b>Optimización de la homeostasis orgánica:</b> mantener el equilibrio dinámico entre energía ingerida, gasto metabólico y recuperación tisular durante el sueño profundo.</li>
+<li><b>Mejora de la calidad de vida:</b> potenciar concentración, consolidación de memoria y rendimiento diario.</li>
+</ul>
+</div>
+</section>
+
+<section id="oms">
+<div class="card">
+<h2>5. Recomendaciones de la OMS y metodología de aplicación</h2>
+<div class="grid">
+<div class="small-card"><h3>🍎 Diversidad alimentaria</h3><p>Consumo mínimo de <b>400 g (5 porciones)</b> de frutas y verduras al día, excluyendo papas, camotes y otros tubérculos feculentos.</p></div>
+<div class="small-card"><h3>🌾 Fibra y carbohidratos</h3><p>Priorizar cereales integrales como avena, trigo y arroz integral, además de legumbres, para un control glucémico sostenido y una adecuada salud de la microbiota intestinal.</p></div>
+<div class="small-card"><h3>⚠️ Limitar sustancias nocivas</h3><p>Disminuir azúcares libres, sodio y grasas trans de producción industrial para reducir la incidencia de hipertensión y dislipidemias.</p></div>
+</div>
+
+<h3>Actividad física diaria</h3>
+<p>Para adolescentes y jóvenes de 5 a 17 años, el documento señala un promedio de al menos 60 minutos diarios de actividad física de intensidad moderada a vigorosa, principalmente aeróbica. Para adultos de 18 a 64 años, se señalan de 150 a 300 minutos semanales de actividad moderada.</p>
+
+<h3>Higiene y duración del sueño</h3>
+<p>El descanso se estructura según metas biológicas de recuperación: adolescentes, 8 a 10 horas; adultos, 7 a 9 horas. Se enfatiza eliminar distractores luminosos y luz azul 60 minutos antes de dormir.</p>
+
+<h3>Metodología de implementación educativa</h3>
+<ol>
+<li><b>Fase diagnóstica:</b> instrumento de recolección de datos sobre frecuencia de consumo de alimentos, horas de descanso e higiene digital previa al sueño.</li>
+<li><b>Fase de capacitación y difusión:</b> material informativo visual (trípticos, esquemas de la pirámide alimenticia e itinerarios circadianos) respaldado por la OMS.</li>
+<li><b>Fase de evaluación:</b> verificar la adherencia a nuevos hábitos mediante registros semanales de autocuidado.</li>
+</ol>
+</div>
+</section>
+
+<section id="servicio">
+<div class="card">
+<h2>6. Definición del servicio y primer nivel de atención</h2>
+<p>El servicio se define como una <b>Estrategia Interdisciplinaria de Promoción de la Salud y Prevención Primaria</b>, orientada a la educación, concienciación y adopción de hábitos de vida saludables basados en la evidencia científica de la OMS.</p>
+<p>Su propósito central es actuar como un puente pedagógico y asistencial informativo que capacita a la población objetivo en la autogestión de su salud metabólica, nutricional y neurofisiológica.</p>
+
+<h3>Marco normativo del nivel de atención</h3>
+<p>Este nivel constituye la entrada principal al Sistema Nacional Integrado de Salud (SNIS) y representa el escenario con mayor cobertura comunitaria, accesibilidad y capacidad de impacto preventivo. Al no requerir infraestructura hospitalaria de alta complejidad, el Primer Nivel se fundamenta en la Atención Primaria de Salud (APS), centrándose en el individuo, la familia y la comunidad.</p>
+
+<h3>Funciones esenciales</h3>
+<div class="grid">
+<div class="small-card"><h3>A. Promoción nutricional</h3><ul><li>Orientación sobre proporciones de la pirámide alimenticia de la OMS.</li><li>Fomento de agua, fibra y micronutrientes.</li><li>Reducción de azúcares libres, sodio y grasas saturadas.</li><li>Capacitación en lectura de etiquetas.</li></ul></div>
+<div class="small-card"><h3>B. Promoción del descanso</h3><ul><li>Difusión de pautas de higiene del sueño.</li><li>Sensibilización sobre la luz azul y la melatonina.</li><li>Orientación para prevenir estrés neuroendocrino y alteraciones de ghrelina/leptina.</li></ul></div>
+<div class="small-card"><h3>C. Prevención primaria de ENT</h3><ul><li>Síndrome metabólico y Diabetes Mellitus Tipo 2.</li><li>Hipertensión arterial y dislipidemias.</li><li>Trastornos del estado de ánimo, fatiga crónica y deterioro del rendimiento cognitivo.</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="minsAL">
+<div class="card">
+<h2>7. Protocolos de actuación aplicables según MINSAL</h2>
+<p>Los protocolos de actuación del Ministerio de Salud (MINSAL) norman los procedimientos técnicos para la promoción de la salud y la prevención primaria en el Primer Nivel de Atención.</p>
+
+<details><summary>1. Evaluación inicial y tamizaje de riesgo</summary>
+<ul>
+<li><b>Patrones alimentarios:</b> identificar frecuencia de ultraprocesados, bebidas azucaradas y sodio; verificar porciones recomendadas de frutas, verduras y agua.</li>
+<li><b>Calidad del descanso:</b> cuestionario sobre horas efectivas de descanso continuo; detectar uso de pantallas, ingesta tardía de cafeína o cenas copiosas.</li>
+</ul></details>
+
+<details><summary>2. Consejería intervencionista en salud (educación)</summary>
+<ul>
+<li><b>Actuación nutricional:</b> entrega e interpretación de la Guía Alimentaria Basada en Alimentos (GABA) aprobada por el MINSAL; explicación práctica de porciones; restricción de grasas saturadas y azúcares libres; preparación con ingredientes frescos e hidratos de carbono complejos de origen local.</li>
+<li><b>Higiene del sueño:</b> horario constante para levantarse y acostarse; desconexión de dispositivos con luz azul 60 minutos antes de dormir; habitación con baja luminosidad, silenciosa y ventilada.</li>
+</ul></details>
+
+<details><summary>3. Registro, monitoreo y seguimiento</summary>
+<ul>
+<li>Ficha de Control de Estilos de Vida para medir cambios de comportamiento.</li>
+<li>Sesiones educativas grupales, talleres comunitarios o escolares.</li>
+<li>Criterios de derivación oportuna ante sospecha de hipertensión, diabetes, apnea obstructiva del sueño o insomnio crónico.</li>
+</ul></details>
+</div>
+</section>
+
+<section id="fisiologia">
+<div class="card">
+<h2>8. Fundamento teórico-práctico</h2>
+<h3>Sustrato anatómico y fisiológico</h3>
+<div class="grid">
+<div class="small-card"><h3>Eje nutricional y metabólico</h3>
+<p>El tracto gastrointestinal, incluyendo estómago e intestino delgado, participa en digestión y absorción. El hígado y páncreas son órganos metabólicos centrales.</p>
+<p>Los carbohidratos complejos inducen una liberación controlada de insulina por las células beta pancreáticas. La fibra estimula mecanorreceptores gástricos que envían señales de saciedad al núcleo del tracto solitario en el tronco encefálico.</p></div>
+<div class="small-card"><h3>Eje neurofisiológico del sueño</h3>
+<p>El núcleo supraquiasmático (NSQ) del hipotálamo actúa como marcapasos circadiano y se relaciona con la glándula pineal.</p>
+<p>En ausencia de luz, el NSQ estimula la síntesis de melatonina en la glándula pineal a partir del aminoácido triptófano. Durante el sueño profundo NREM, el sistema glinfático cerebral incrementa el flujo de líquido cefalorraquídeo para depurar metabolitos acumulados durante la vigilia.</p></div>
+</div>
+
+<h3>Mecanismos fisiopatológicos del desequilibrio</h3>
+<p>El incumplimiento de las pautas de la pirámide alimenticia y de la higiene del sueño genera un círculo vicioso de disfunción biológica.</p>
+<ul>
+<li><b>Desregulación neuroendocrina del apetito:</b> la privación crónica de sueño disminuye leptina e incrementa ghrelina, desencadenando hiperfagia y preferencia por ultraprocesados.</li>
+<li><b>Estrés metabólico e inflamación:</b> la ingesta de azúcares libres y grasas saturadas unida a la falta de descanso eleva el cortisol, promoviendo resistencia periférica a la insulina, esteatosis hepática e inflamación sistémica.</li>
+</ul>
+
+<h3>Nociones de farmacología básica — enfoque preventivo</h3>
+<ul>
+<li><b>Cafeína/bebidas energizantes:</b> son estimulantes que antagonizan receptores de adenosina; su consumo tardío bloquea la presión homeostática del sueño e interrumpe la arquitectura del descanso.</li>
+<li><b>Melatonina exógena:</b> el documento la describe como suplementación utilizada bajo indicación médica para reajuste del ritmo circadiano en trastornos de desfase horario o insomnio inicial.</li>
+<li><b>Suplementación micronutricional:</b> vitaminas y minerales para corregir deficiencias específicas cuando existe una ingesta alimentaria inadecuada.</li>
+</ul>
+
+<h3>Procedimiento técnico a realizar</h3>
+<p class="note">El documento identifica este apartado como una pauta metodológica estandarizada que ejecutará el estudiante/profesional de salud durante las sesiones de intervención en la comunidad.</p>
+</div>
+</section>
+
+<section id="materias">
+<div class="card">
+<h2>9. Relación interdisciplinaria del proyecto con las materias</h2>
+<p>El informe aplica un enfoque interdisciplinario conectando fisiología del descanso y nutrición balanceada con cinco materias principales.</p>
+<details><summary>1. Ciencias Naturales</summary>
+<p><b>Pirámide:</b> procesos bioquímicos de digestión y metabolismo de carbohidratos complejos, proteínas, fibra y lípidos insaturados, y su papel en control glucémico y prevención del sobrepeso.</p>
+<p><b>Sueño:</b> neurofisiología del ritmo circadiano, melatonina, glándula pineal y control hormonal del apetito mediante leptina y ghrelina.</p>
+</details>
+<details><summary>2. Ciudadanía</summary>
+<p><b>Pirámide:</b> acceso económico, disponibilidad de alimentos locales frescos e influencia de publicidad industrial de ultraprocesados.</p>
+<p><b>Sueño:</b> cómo estudio nocturno, turnos de trabajo y uso extendido de dispositivos alteran descansos comunitarios y la necesidad de políticas públicas de autocuidado promovidas por MINSAL y OMS.</p>
+</details>
+<details><summary>3. Matemáticas</summary>
+<p><b>Pirámide:</b> cálculos estadísticos, proporciones y porcentajes para raciones diarias, calorías, lectura de etiquetas y seguimiento del IMC.</p>
+<p><b>Sueño:</b> tabulación y gráficos de horas de descanso, porcentaje de cumplimiento de 8 a 10 horas y tiempo de exposición a luz azul.</p>
+</details>
+<details><summary>4. Lenguaje y Literatura</summary>
+<p><b>Pirámide:</b> redacción de material informativo, trifoliados y charlas para explicar selección de alimentos y desmentir mitos.</p>
+<p><b>Sueño:</b> elaboración de guiones educativos, campañas y protocolos sobre higiene digital y regulación circadiana.</p>
+</details>
+<details><summary>5. Inglés</summary>
+<p><b>Nutrición:</b> Food Pyramid, Balanced Diet, Nutrient Intake, Ultra-processed Foods, Free Sugars.</p>
+<p><b>Sueño:</b> Sleep Hygiene, Circadian Rhythm, Melatonin, Blue Light Exposure, Sleep Deprivation.</p>
+</details>
+</div>
+</section>
+
+<section id="ideario">
+<div class="card">
+<h2>10. Vinculación con el ideario institucional</h2>
+<p>El proyecto se fundamenta en los pilares identitarios, principios y valores del Complejo Educativo Católico “Nuestra Señora del Rosario” (CECNSR), además de criterios científicos de la OMS y normativos del MINSAL.</p>
+
+<h3>Visión y misión institucional</h3>
+<ul>
+<li><b>Visión:</b> formar ciudadanos integrales; promover salud física, nutricional y descanso biológico contribuye a un desarrollo equilibrado donde el cuidado del cuerpo es base para el servicio a la sociedad.</li>
+<li><b>Misión:</b> formar estudiantes bajo un enfoque holístico; el cuidado del templo del cuerpo mediante pirámide alimenticia e higiene del sueño es una manifestación del respeto a la vida y dignidad humana.</li>
+</ul>
+
+<h3>Principios educativos</h3>
+<div class="grid">
+<div class="small-card"><h3>Principio 4</h3><p><b>Integramos fe, cultura y vida.</b> El conocimiento científico sobre melatonina y equilibrio metabólico se transforma en práctica cotidiana de autocuidado.</p></div>
+<div class="small-card"><h3>Principio 7</h3><p><b>Educamos con el ejemplo.</b> El estudiante/promotor de salud debe ser testimonio de hábitos saludables en su propia alimentación y descanso.</p></div>
+<div class="small-card"><h3>Principio 9</h3><p><b>Amamos y respetamos la naturaleza.</b> Respetar los ciclos biológicos del cuerpo y alimentarse conscientemente valora el cuerpo como creación.</p></div>
+<div class="small-card"><h3>Principio 10</h3><p><b>Educamos para la familia y la sociedad.</b> Los hábitos aprendidos se replican en el hogar, fortaleciendo la salud de la familia.</p></div>
+</div>
+
+<h3>Valores franciscanos y marianos</h3>
+<ul>
+<li><b>Fraternidad:</b> promover estilos de vida saludables en la comunidad como acto de amor fraternal.</li>
+<li><b>Armonía con la Naturaleza:</b> sincronizar el organismo con los ritmos biológicos, respetando la noche para el sueño y el día para la nutrición.</li>
+<li><b>Minoridad y Servicio (Misericordia):</b> poner al servicio de las personas vulnerables el conocimiento preventivo de salud para mejorar su calidad de vida.</li>
+</ul>
+</div>
+</section>
+
+<section id="quiz">
+<div class="card">
+<h2>📝 Preguntas finales</h2>
+<p>Ahora sí: la parte interactiva queda únicamente al final. Selecciona una respuesta por pregunta y comprueba tu resultado.</p>
+
+<form id="quizForm">
+<div class="quiz-q"><b>1. Según el documento, ¿qué representa la pirámide alimenticia?</b>
+<label><input type="radio" name="q1" value="a"> Una representación didáctica y científica de las necesidades nutricionales.</label>
+<label><input type="radio" name="q1" value="b"> Una lista exclusiva de alimentos ultraprocesados.</label>
+<label><input type="radio" name="q1" value="c"> Un método para medir las horas de sueño.</label></div>
+
+<div class="quiz-q"><b>2. ¿Cuántas horas de sueño nocturno se señalan para adolescentes?</b>
+<label><input type="radio" name="q2" value="a"> 5 a 6 horas</label>
+<label><input type="radio" name="q2" value="b"> 8 a 10 horas</label>
+<label><input type="radio" name="q2" value="c"> 11 a 13 horas</label></div>
+
+<div class="quiz-q"><b>3. ¿Cuánto tiempo antes de dormir se recomienda evitar la luz azul?</b>
+<label><input type="radio" name="q3" value="a"> 10 minutos</label>
+<label><input type="radio" name="q3" value="b"> 30 minutos</label>
+<label><input type="radio" name="q3" value="c"> 60 minutos</label></div>
+
+<div class="quiz-q"><b>4. ¿Qué alimentos se mencionan como fuentes de carbohidratos complejos?</b>
+<label><input type="radio" name="q4" value="a"> Cereales integrales y legumbres</label>
+<label><input type="radio" name="q4" value="b"> Solo dulces y bebidas azucaradas</label>
+<label><input type="radio" name="q4" value="c"> Únicamente embutidos</label></div>
+
+<div class="quiz-q"><b>5. ¿Qué hormonas se relacionan con la regulación del apetito?</b>
+<label><input type="radio" name="q5" value="a"> Insulina y cortisol únicamente</label>
+<label><input type="radio" name="q5" value="b"> Leptina y ghrelina</label>
+<label><input type="radio" name="q5" value="c"> Melatonina y triptófano</label></div>
+
+<div class="quiz-q"><b>6. ¿Cuál es una recomendación del documento sobre el dormitorio?</b>
+<label><input type="radio" name="q6" value="a"> Mantenerlo oscuro, silencioso y a temperatura confortable.</label>
+<label><input type="radio" name="q6" value="b"> Mantener todas las luces encendidas.</label>
+<label><input type="radio" name="q6" value="c"> Usarlo principalmente para estudiar hasta tarde.</label></div>
+
+<div class="quiz-q"><b>7. ¿Qué cantidad mínima diaria de frutas y verduras se indica?</b>
+<label><input type="radio" name="q7" value="a"> 100 g</label>
+<label><input type="radio" name="q7" value="b"> 250 g</label>
+<label><input type="radio" name="q7" value="c"> 400 g (5 porciones)</label></div>
+
+<div class="quiz-q"><b>8. ¿Cuál es el propósito central del proyecto?</b>
+<label><input type="radio" name="q8" value="a"> Promover educación, concienciación y adopción de hábitos saludables.</label>
+<label><input type="radio" name="q8" value="b"> Promover solamente el ejercicio.</label>
+<label><input type="radio" name="q8" value="c"> Sustituir la atención médica especializada.</label></div>
+
+<button type="button" onclick="calificar()">Ver mi resultado</button>
+<div id="resultado"></div>
+</form>
+</div>
+</section>
+
+<div class="card">
+<h2>Fuentes</h2>
+<h3>Artículos de la OMS</h3>
+<ul>
+<li>Artículos y publicaciones de la Organización Mundial de la Salud (OMS) sobre alimentación saludable.</li>
+<li>Artículos de la OMS sobre actividad física y estilos de vida saludables.</li>
+<li>Artículos de la OMS sobre autocuidado, bienestar y hábitos saludables.</li>
+</ul>
+<p class="source">Contenido del proyecto elaborado a partir del documento proporcionado y de artículos de la OMS utilizados como referencia.</p>
+</div>
+
+</main>
+
+<footer>
+  <b>Vive Saludable</b><br>
+  Alimentación equilibrada · Descanso reparador · Autocuidado
+</footer>
+
+<script>
+function toggleInfo(id){
+  document.getElementById(id).classList.toggle('show');
+}
+function calificar(){
+  const respuestas={q1:'a',q2:'b',q3:'c',q4:'a',q5:'b',q6:'a',q7:'c',q8:'a'};
+  let puntos=0, contestadas=0;
+  Object.keys(respuestas).forEach(q=>{
+    const r=document.querySelector('input[name="'+q+'"]:checked');
+    if(r){contestadas++; if(r.value===respuestas[q]) puntos++;}
+  });
+  const resultado=document.getElementById('resultado');
+  if(contestadas<8){
+    resultado.textContent='Completa las 8 preguntas para ver tu resultado.';
+    return;
+  }
+  const nota=puntos*10;
+  let mensaje='';
+  if(nota===100) mensaje='¡Excelente! Dominas muy bien la información del proyecto. 🌟';
+  else if(nota>=70) mensaje='¡Muy bien! Tienes un buen dominio del tema. 👍';
+  else if(nota>=50) mensaje='Buen esfuerzo. Repasa algunos apartados y vuelve a intentarlo.';
+  else mensaje='Repasa la información de la página y vuelve a intentarlo.';
+  resultado.innerHTML='Resultado: <b>'+nota+'/100</b><br>'+mensaje;
+}
+</script>
+</body>
+</html>
